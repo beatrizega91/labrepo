@@ -1,17 +1,14 @@
 import requests
 
-url = "https://deckofcardsapi.com/api/deck/ctg1jt5cw5eg/draw/?count=6"
-
-payload = {}
+url = "https://deckofcardsapi.com/api/deck/new/shuffle/"
+querystring = {"deck_count": "6"}
 headers = {
-  'Cookie': '__cfduid=d9fa620fc3adcd7f36e96bdd2d346e2511590101213'
+'Cache-Control': "no-cache",
+'Postman-Token': "dd1d8ca5-7000-21b2-2230-39969d585419"
 }
+response = requests.request("GET", url, headers=headers, params=querystring)
 
-response = requests.request("GET", url, headers=headers, data = payload)
-
-print(response.text.encode('utf8'))
-
-
+print(response.text)
 deck = response.json()
 deck_id = deck['deck_id']
 print(deck_id)

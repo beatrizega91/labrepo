@@ -1,0 +1,63 @@
+
+col telnet
+ state admin-state unlocked
+!
+devices device dist-rtr01
+ address   10.10.20.175
+ ssh host-key-verification none
+ authgroup labadmin
+ device-type cli ned-id cisco-ios-cli-6.44
+ device-type cli protocol telnet
+ state admin-state unlocked
+!
+devices device dist-rtr02
+ address   10.10.20.176
+ ssh host-key-verification none
+ authgroup labadmin
+ device-type cli ned-id cisco-ios-cli-6.44
+ device-type cli protocol telnet
+ state admin-state unlocked
+!
+devices device dist-sw01
+ address   10.10.20.177
+ ssh host-key-verification none
+ authgroup labadmin
+ device-type cli ned-id cisco-nx-cli-5.15
+ device-type cli protocol telnet
+ ned-settings cisco-nx behaviours show-interface-all enable
+ state admin-state unlocked
+!
+devices device dist-sw02
+ address   10.10.20.178
+ ssh host-key-verification none
+ authgroup labadmin
+ device-type cli ned-id cisco-nx-cli-5.15
+ device-type cli protocol telnet
+ ned-settings cisco-nx behaviours show-interface-all enable
+ state admin-state unlocked
+!
+devices device edge-firewall01
+ address   10.10.20.171
+ ssh host-key-verification none
+ authgroup labadmin
+ device-type cli ned-id cisco-asa-cli-6.8
+ device-type cli protocol telnet
+ state admin-state unlocked
+!
+devices device edge-sw01
+ address   10.10.20.172
+ ssh host-key-verification none
+ authgroup labadmin
+ device-type cli ned-id cisco-ios-cli-6.44
+ device-type cli protocol telnet
+ state admin-state unlocked
+!
+devices device internet-rtr01
+ address   10.10.20.181
+ ssh host-key-verification none
+ authgroup labadmin
+ device-type cli ned-id cisco-ios-cli-6.44
+ device-type cli protocol telnet
+ state admin-state unlocked
+! 
+
